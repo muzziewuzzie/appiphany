@@ -5,6 +5,11 @@
   background-color: #24252a;
 }
 
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+
 li,
 a,
 button {
@@ -21,10 +26,13 @@ header {
   /* justify-content: flex-end; */
   align-items: center;
   padding: 30px 10%;
+  background-color: grey;
+  height: 80px;
 }
 
 .app_title {
   color: aqua;
+  background-color: grey;
 }
 
 .nav_links {
@@ -34,6 +42,7 @@ header {
 .nav_links li {
   display: inline-block;
   padding: 0px 20px;
+  background-color: grey;
 }
 
 button {
@@ -48,3 +57,38 @@ button {
 button:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
+
+.homepage_content {
+  height: calc(100vh - 80px);
+  background-image: url(./img/black_white_hand.jpg);
+  background-size: cover;
+  background-position: center;
+  /* background-color: transparent; */
+  /* padding: 30px 10%; */
+  /* text-align: center;
+  margin: auto; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.content {
+  position: absolute;
+  padding: 30px;
+  top: 35%;
+  left: 50%;
+  background-color: transparent;
+}
+
+.content_title,
+.content_details {
+  margin: 10px;
+  color: #fff;
+  background-color: transparent;
+}
+
+/* .content h1,
+p {
+  padding: 10px;
+  color: #fff;
+} */

@@ -6,7 +6,7 @@ const HomepageContent = () => {
       <div className="content">
         <h1 className="content_title">RACISM.</h1>
         <p className="content_details">
-          Let's not remain ignorant any longer. Break the stigma now.
+          Let's not remain ignorant any longer. <br /> Break the stigma now.
         </p>
         <Button name="Learn More" />
       </div>

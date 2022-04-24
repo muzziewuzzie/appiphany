@@ -1,14 +1,19 @@
-// import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import "./styles.css";
 import Header from "./components/Header";
 import HomepageContent from "./components/HomepageContent";
 
 const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <HomepageContent />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomepageContent />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

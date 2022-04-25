@@ -68,23 +68,23 @@ button:hover {
   background-color: rgba(0, 136, 169, 0.8);
 }
 
-.homepage_content {
+.content_container {
   height: calc(100vh - 80px);
-  background-image: url(./img/black_white_hand.jpg);
+  /* background-image: url(./img/black_white_hand.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center; */
   /* padding: 30px 10%; */
 }
 
-.content {
+.homepage_content {
   position: absolute;
   padding: 30px;
   top: 35%;
   left: 50%;
 }
 
-.content_title,
+/* .content_title,
 .content_details {
   margin: 10px;
   color: #fff;
-}
+} */

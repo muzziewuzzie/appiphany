@@ -25,7 +25,7 @@ const NavBar = () => {
           <Link
             to="/topics"
             className={
-              location.pathname === "/topics"
+              location.pathname.includes("/topics")
                 ? `${linkStyle} ${currentLinkStyle}`
                 : linkStyle
             }

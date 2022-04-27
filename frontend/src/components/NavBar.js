@@ -4,7 +4,7 @@ const NavBar = () => {
   const location = useLocation();
 
   const linkStyle = "link";
-  const currentLinkStyle = "current_link";
+  const currentLinkStyle = "link current_link";
 
   return (
     <nav>
@@ -12,11 +12,7 @@ const NavBar = () => {
         <li>
           <Link
             to="/"
-            className={
-              location.pathname === "/"
-                ? `${linkStyle} ${currentLinkStyle}`
-                : linkStyle
-            }
+            className={location.pathname === "/" ? currentLinkStyle : linkStyle}
           >
             Home
           </Link>
@@ -26,7 +22,7 @@ const NavBar = () => {
             to="/topics"
             className={
               location.pathname.includes("/topics")
-                ? `${linkStyle} ${currentLinkStyle}`
+                ? currentLinkStyle
                 : linkStyle
             }
           >
@@ -37,9 +33,7 @@ const NavBar = () => {
           <Link
             to="/about"
             className={
-              location.pathname === "/about"
-                ? `${linkStyle} ${currentLinkStyle}`
-                : linkStyle
+              location.pathname === "/about" ? currentLinkStyle : linkStyle
             }
           >
             About

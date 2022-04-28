@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Button from "./Button";
 
-const homepageContentStyle = {
+const homepageStyle = {
   backgroundImage: `url("/img/black_white_hand.jpg")`,
   backgroundSize: "cover",
   backgroundPosition: "center",
@@ -15,7 +15,7 @@ const contentSpacing = {
 
 const HomepageContent = () => {
   return (
-    <div className="content_container" style={homepageContentStyle}>
+    <div className="content_container" style={homepageStyle}>
       <div className="homepage_content">
         <h1 style={contentSpacing}>RACISM.</h1>
         <p style={contentSpacing}>

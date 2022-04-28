@@ -109,12 +109,6 @@ button:hover {
   /* padding: 30px 5%; */
 }
 
-.progress_bar {
-  width: 100%;
-  background-color: #fff;
-  color: black;
-}
-
 .content_no_bar {
   display: flex;
   justify-content: center;

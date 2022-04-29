@@ -21,7 +21,6 @@ button {
 header {
   display: flex;
   justify-content: space-between;
-  /* justify-content: flex-end; */
   align-items: center;
   padding: 30px 10%;
   background-color: grey;
@@ -72,10 +71,6 @@ button:hover {
   height: calc(100vh - 80px);
   width: 100%;
   position: relative;
-  /* background-image: url(./img/black_white_hand.jpg);
-  background-size: cover;
-  background-position: center; */
-  /* padding: 30px 10%; */
 }
 
 .homepage_content {
@@ -85,28 +80,12 @@ button:hover {
   left: 50%;
 }
 
-/* .content_title,
-.content_details {
-  margin: 10px;
-  color: #fff;
-} */
-
-/* .racism_content {
-  width: 80%;
-  background-color: black;
-  color: white;
-  margin: auto;
-  text-align: center;
-  padding: 30px 10%;
-} */
-
 .racism_content {
   background-color: black;
   color: #fff;
   text-align: center;
   width: 60%;
   position: relative;
-  /* padding: 30px 5%; */
 }
 
 .content_no_bar {

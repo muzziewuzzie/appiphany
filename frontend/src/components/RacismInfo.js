@@ -1,4 +1,4 @@
-const information = [
+export const information = [
   <div className="racism_information">
     <h2>Brief History</h2>
     <p className="information">
@@ -43,7 +43,7 @@ const information = [
       kind are dangerous". In the U.K., Chuks Nwaobasi shared about incidents
       when he used to be on the receiving end of racist behaviour, like name
       calling. When he tried bringing attention to this matter, he received
-      comments such as "it does not happen that often", or "you\'re being too
+      comments such as "it does not happen that often", or "you're being too
       sensitive". Such prejudicial behaviour can also been in Singapore, where a
       30-year-old Chinese man physical assaulted and made an offensive racial
       slur to an Indian woman.',
@@ -81,4 +81,11 @@ const information = [
   </div>,
 ];
 
-export default information;
+export const images = [
+  "/img/aristotle.jpg",
+  "/img/aris.jpg",
+  "/img/anglosaxon.jpg",
+  "/img/meganfrancis.jpg",
+  "/img/scapegoat.jpg",
+  "/img/segregation.jpg",
+];

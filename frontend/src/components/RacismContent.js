@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 import Button from "./Button";
 
-import information from "./RacismInfo";
+import { information, images } from "./RacismInfo";
 
 const RacismContent = () => {
   const racismPageStyle = {
@@ -48,7 +48,7 @@ const RacismContent = () => {
         <div style={progressBarStyle}></div>
         <div className="content_no_bar">
           <div className="image_container">
-            <img src="/img/dummy.jpg" alt="dummy" />
+            <img src={images[index]} alt="dummy" />
           </div>
           {information[index]}
         </div>

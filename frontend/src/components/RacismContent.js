@@ -40,7 +40,7 @@ const RacismContent = () => {
       ...prevStyle,
       width: progressBarWidth.current,
     }));
-  }, [index, information.length]);
+  }, [index]);
 
   return (
     <div className="content_container" style={racismPageStyle}>
@@ -53,8 +53,8 @@ const RacismContent = () => {
           {information[index]}
         </div>
         <div className="button_container">
-          <Button name="Left" handleClick={handleLeftButtonClick} />
-          <Button name="Right" handleClick={handleRightButtonClick} />
+          <Button name="Previous" handleClick={handleLeftButtonClick} />
+          <Button name="Next" handleClick={handleRightButtonClick} />
         </div>
       </div>
     </div>

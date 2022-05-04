@@ -133,3 +133,27 @@ a {
 .button_container {
   padding-bottom: 10px;
 }
+
+.login_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  color: #fff;
+  background-color: black;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+input {
+  font-size: 22px;
+  padding: 0.25rem;
+  margin: 9px;
+  border-radius: 0.5rem;
+}

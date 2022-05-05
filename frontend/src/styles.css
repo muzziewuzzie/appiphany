@@ -137,10 +137,11 @@ a {
 .login_content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 1rem;
   color: #fff;
   background-color: black;
+  min-height: 300px;
 }
 
 form {
@@ -156,4 +157,9 @@ input {
   padding: 0.25rem;
   margin: 9px;
   border-radius: 0.5rem;
+}
+
+.error_message {
+  color: red;
+  text-align: center;
 }

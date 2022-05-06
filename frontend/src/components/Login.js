@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+import { UserContext } from "../App";
 
 import Button from "./Button";
 
@@ -7,7 +9,10 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
   const navigate = useNavigate();
+
+  const { dispatch } = useContext(UserContext);
 
   const loginPageStyle = {
     backgroundColor: "blue",
@@ -34,6 +39,7 @@ const Login = () => {
     const data = await response.json();
     if (data.status === "ok") {
       localStorage.setItem("user", data.username);
+      dispatch({ type: "USER", payload: true });
       navigate("/");
     } else setErrorMessage(data.error);
   };

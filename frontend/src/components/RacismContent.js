@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 import Button from "./Button";
 
@@ -34,6 +35,8 @@ const RacismContent = () => {
     setIndex((prevIndex) => prevIndex + 1);
   };
 
+  // const handleCommentsButtonClick = () => {};
+
   useEffect(() => {
     progressBarWidth.current = `${((index + 1) / information.length) * 100}%`;
     setProgressBarStyle((prevStyle) => ({
@@ -55,6 +58,13 @@ const RacismContent = () => {
         <div className="button_container">
           <Button name="Previous" handleClick={handleLeftButtonClick} />
           <Button name="Next" handleClick={handleRightButtonClick} />
+          {index === information.length - 1 ? (
+            <Link to="/topics/racism/comments">
+              <Button name="Comments" />
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

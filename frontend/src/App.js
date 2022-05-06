@@ -8,6 +8,7 @@ import HomepageContent from "./components/HomepageContent";
 import RacismContent from "./components/RacismContent";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Comments from "./components/Comments";
 
 import { initialState, reducer } from "./reducer/UseReducer";
 
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/topics/racism" element={<RacismContent />} />
+            <Route path="/topics/racism/comments" element={<Comments />} />
           </Routes>
         </div>
       </Router>

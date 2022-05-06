@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const User = require("./models/user_model");
+const Comment = require("./models/comment_model");
 
 const PORT = 5000;
 const app = express();
@@ -57,5 +58,46 @@ app.post("/api/login", async (req, res) => {
     res.json({ status: "error", error: "Something went wrong" });
   }
 });
+
+app.get("/api/comments", async (req, res) => {
+  try {
+    const comments = await Comment.find();
+    if (comments) {
+      return res.json({
+        status: "ok",
+        datum: comments,
+      });
+    } else {
+      return res.json({
+        status: "ok",
+        datum: "No comments",
+      });
+    }
+  } catch (err) {
+    res.json({ status: "error", error: "Something went wrong" });
+  }
+});
+
+app.post("/api/comments", async (req, res) => {
+  try {
+    await Comment.create({
+      username: req.body.username,
+      email: req.body.email,
+      comment: req.body.comment,
+    });
+    try {
+      const comments = await Comment.find();
+      return res.json({ status: "ok", datum: comments });
+    } catch (err) {
+      res.json({ status: "error", error: "Something went wrong" });
+    }
+  } catch (err) {
+    res.json({ status: "error", error: "Something went wrong" });
+  }
+});
+
+// app.post("/api/index", async (req, res) => {
+
+// })
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

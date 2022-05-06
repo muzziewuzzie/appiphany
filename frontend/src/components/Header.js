@@ -7,15 +7,7 @@ import Button from "./Button";
 import { UserContext } from "../App";
 
 const Header = () => {
-  // const [user, setUser] = useState("");
-
   const { state } = useContext(UserContext);
-
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     setUser(localStorage.getItem("user"));
-  //   }, 5000);
-  // }, []);
 
   return (
     <header>

@@ -6,7 +6,7 @@ import { information, images } from "./RacismInfo";
 
 const RacismContent = () => {
   const racismPageStyle = {
-    backgroundColor: "blue",
+    backgroundColor: "#3186e0",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

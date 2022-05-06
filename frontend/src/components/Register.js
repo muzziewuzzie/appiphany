@@ -17,7 +17,7 @@ const Register = () => {
   }, [password, matchPassword]);
 
   const registerPageStyle = {
-    backgroundColor: "blue",
+    backgroundColor: "#3186e0",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

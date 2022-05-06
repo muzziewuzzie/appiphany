@@ -15,7 +15,7 @@ const Login = () => {
   const { dispatch } = useContext(UserContext);
 
   const loginPageStyle = {
-    backgroundColor: "blue",
+    backgroundColor: "#3186e0",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

@@ -15,8 +15,8 @@ const Header = () => {
         <h1 className="app_title">APPIPHANY</h1>
       </Link>
       <NavBar />
-      {state || localStorage.getItem("user") ? (
-        localStorage.getItem("user")
+      {state.loggedIn ? (
+        state.username
       ) : (
         <Link to="/login">
           <Button name="Login" />

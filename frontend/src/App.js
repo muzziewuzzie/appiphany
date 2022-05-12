@@ -10,12 +10,12 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Comments from "./components/Comments";
 
-import { initialState, reducer } from "./reducer/UseReducer";
+import { userDetails, reducer } from "./reducer/UseReducer";
 
 export const UserContext = createContext();
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, userDetails);
   return (
     <UserContext.Provider value={{ state, dispatch }}>
       <Router>

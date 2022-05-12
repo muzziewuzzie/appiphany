@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "./Button";
 
+import { UserContext } from "../App";
 import { information, images } from "./RacismInfo";
 
 const RacismContent = () => {
@@ -13,7 +14,10 @@ const RacismContent = () => {
     alignItems: "center",
   };
 
-  const [index, setIndex] = useState(0);
+  const { state, dispatch } = useContext(UserContext);
+
+  const [index, setIndex] = useState(state.loggedIn ? state.index : 0);
+  const email = state.loggedIn ? state.email : "";
 
   const progressBarWidth = useRef(
     `${((index + 1) / information.length) * 100}%`
@@ -28,14 +32,14 @@ const RacismContent = () => {
   const handleLeftButtonClick = () => {
     if (index === 0) return;
     setIndex((prevIndex) => prevIndex - 1);
+    dispatch({ type: "DecrementIndex" });
   };
 
   const handleRightButtonClick = () => {
     if (index === information.length - 1) return;
     setIndex((prevIndex) => prevIndex + 1);
+    dispatch({ type: "IncrementIndex" });
   };
-
-  // const handleCommentsButtonClick = () => {};
 
   useEffect(() => {
     progressBarWidth.current = `${((index + 1) / information.length) * 100}%`;
@@ -43,6 +47,19 @@ const RacismContent = () => {
       ...prevStyle,
       width: progressBarWidth.current,
     }));
+    if (email) {
+      fetch("http://localhost:5000/api/index", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          index,
+        }),
+      });
+    }
+    // eslint-disable-next-line
   }, [index]);
 
   return (

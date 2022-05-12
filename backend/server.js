@@ -21,6 +21,7 @@ app.post("/api/register", async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      leftOffAt: req.body.leftOffAt,
     });
     res.json({ status: "ok" });
   } catch (err) {
@@ -40,6 +41,7 @@ app.post("/api/login", async (req, res) => {
           user: true,
           username: user.username,
           email: user.email,
+          leftOffAt: user.leftOffAt,
         });
       else
         return res.json({
@@ -96,8 +98,17 @@ app.post("/api/comments", async (req, res) => {
   }
 });
 
-// app.post("/api/index", async (req, res) => {
-
-// })
+app.post("/api/index", async (req, res) => {
+  try {
+    await User.findOneAndUpdate(
+      {
+        email: req.body.email,
+      },
+      { leftOffAt: req.body.index }
+    );
+  } catch (err) {
+    res.json({ status: "error", error: "Something went wrong" });
+  }
+});
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

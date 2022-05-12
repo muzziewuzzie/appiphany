@@ -102,7 +102,7 @@ export const information = [
           30-year-old Chinese man physically assaulted
         </a>
       </span>{" "}
-      and made an offensive racial slur to an Indian woman.',
+      and made an offensive racial slur to an Indian woman.
     </p>
   </div>,
   <div className="racism_information">

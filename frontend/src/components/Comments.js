@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import { UserContext } from "../App";
 
 import Button from "./Button";
 
@@ -6,7 +8,7 @@ const Comments = () => {
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
 
-  //   const { state } = useContext(UserContext);
+  const { state } = useContext(UserContext);
 
   useEffect(() => {
     const getComments = async () => {
@@ -31,12 +33,12 @@ const Comments = () => {
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
 
-    if (!localStorage.getItem("user")) {
+    if (!state.loggedIn) {
       return;
     }
 
-    const username = localStorage.getItem("user");
-    const email = localStorage.getItem("email");
+    const username = state.username;
+    const email = state.email;
 
     const response = await fetch("http://localhost:5000/api/comments", {
       method: "POST",

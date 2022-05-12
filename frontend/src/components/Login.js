@@ -38,9 +38,14 @@ const Login = () => {
 
     const data = await response.json();
     if (data.status === "ok") {
-      localStorage.setItem("user", data.username);
-      localStorage.setItem("email", data.email);
-      dispatch({ type: "USER", payload: true });
+      dispatch({
+        type: "LogIn",
+        payload: {
+          username: data.username,
+          email: data.email,
+          index: data.leftOffAt,
+        },
+      });
       navigate("/");
     } else setErrorMessage(data.error);
   };

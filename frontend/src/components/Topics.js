@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 const Topics = () => {
@@ -24,7 +25,9 @@ const Topics = () => {
           Interacting
         </p>
         <div style={buttonAreaStyle}>
-          <Button name="Learn Now" />
+          <Link to="/topics/racism" className="link">
+            <Button name="Learn Now" />
+          </Link>
         </div>
       </div>
       more topics coming soon...

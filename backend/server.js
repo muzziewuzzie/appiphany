@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const User = require("./models/user_model");
 const Comment = require("./models/comment_model");
+const Suggestion = require("./models/suggestion_model");
 
 const PORT = 5000;
 const app = express();
@@ -106,6 +107,17 @@ app.post("/api/index", async (req, res) => {
       },
       { leftOffAt: req.body.index }
     );
+  } catch (err) {
+    res.json({ status: "error", error: "Something went wrong" });
+  }
+});
+
+app.post("/api/suggestion", async (req, res) => {
+  try {
+    await Suggestion.create({
+      suggestion: req.body.suggestion,
+    });
+    res.json({ status: "ok" });
   } catch (err) {
     res.json({ status: "error", error: "Something went wrong" });
   }

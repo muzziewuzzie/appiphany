@@ -5,9 +5,11 @@ import "./styles.css";
 
 import Header from "./components/Header";
 import HomepageContent from "./components/HomepageContent";
-import RacismContent from "./components/RacismContent";
+import Topics from "./components/Topics";
+import About from "./components/About";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import RacismContent from "./components/RacismContent";
 import Comments from "./components/Comments";
 
 import { userDetails, reducer } from "./reducer/UseReducer";
@@ -23,6 +25,8 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<HomepageContent />} />
+            <Route path="/topics" element={<Topics />} />
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/topics/racism" element={<RacismContent />} />

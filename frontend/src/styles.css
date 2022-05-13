@@ -232,3 +232,27 @@ textarea {
   border: 2px solid black;
   border-radius: 8px;
 }
+
+.about_content {
+  padding: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 300px;
+}
+
+.no_display {
+  display: none;
+}
+
+.suggestion_submitted_message {
+  color: green;
+  text-align: center;
+}
+
+.topics_content {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-height: 300px;
+}

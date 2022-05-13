@@ -29,8 +29,6 @@ const Register = () => {
 
     if (error) return;
 
-    const leftOffAt = 0;
-
     const response = await fetch("http://localhost:5000/api/register", {
       method: "POST",
       headers: {
@@ -40,7 +38,6 @@ const Register = () => {
         username,
         email,
         password,
-        leftOffAt,
       }),
     });
 

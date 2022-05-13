@@ -17,7 +17,6 @@ const RacismContent = () => {
   const { state, dispatch } = useContext(UserContext);
 
   const [index, setIndex] = useState(state.loggedIn ? state.index : 0);
-  const email = state.loggedIn ? state.email : "";
 
   const progressBarWidth = useRef(
     `${((index + 1) / information.length) * 100}%`
@@ -47,18 +46,6 @@ const RacismContent = () => {
       ...prevStyle,
       width: progressBarWidth.current,
     }));
-    if (email) {
-      fetch("http://localhost:5000/api/index", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          index,
-        }),
-      });
-    }
     // eslint-disable-next-line
   }, [index]);
 

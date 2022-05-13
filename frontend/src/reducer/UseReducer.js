@@ -13,7 +13,6 @@ export const reducer = (state, action) => {
         loggedIn: true,
         username: action.payload.username,
         email: action.payload.email,
-        index: action.payload.index,
       };
     case "IncrementIndex":
       return { ...state, index: state.index + 1 };

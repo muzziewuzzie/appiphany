@@ -16,8 +16,12 @@ const About = () => {
   const [displayForm, setDisplayForm] = useState(false);
   const [suggestionSubmitted, setSuggestionSubmitted] = useState(false);
 
-  const handleSuggestionClick = async () => {
+  const handleSuggestionClick = () => {
     setDisplayForm(true);
+  };
+
+  const handleSuggestionSubmit = async (e) => {
+    e.preventDefault();
 
     const response = await fetch("http://localhost:5000/api/suggestion", {
       method: "POST",
@@ -29,10 +33,6 @@ const About = () => {
     if (data.status === "ok") {
       setSuggestionSubmitted(true);
     }
-  };
-
-  const handleSuggestionSubmit = (e) => {
-    e.preventDefault();
   };
 
   return (

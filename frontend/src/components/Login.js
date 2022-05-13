@@ -43,7 +43,6 @@ const Login = () => {
         payload: {
           username: data.username,
           email: data.email,
-          index: data.leftOffAt,
         },
       });
       navigate("/");

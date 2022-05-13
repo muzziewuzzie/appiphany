@@ -11,15 +11,9 @@ const Comments = () => {
   const { state } = useContext(UserContext);
 
   useEffect(() => {
-    const getComments = async () => {
-      const response = await fetch("http://localhost:5000/api/comments", {
-        method: "GET",
-      });
-      const data = await response.json();
-      setComments(data.datum);
-      console.log(comments ? "true" : "false");
-    };
-    getComments();
+    fetch("http://localhost:5000/api/comments")
+      .then((response) => response.json())
+      .then((data) => setComments(data.datum));
     // eslint-disable-next-line
   }, []);
 

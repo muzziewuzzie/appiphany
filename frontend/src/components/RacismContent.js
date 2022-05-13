@@ -68,7 +68,7 @@ const RacismContent = () => {
         <div style={progressBarStyle}></div>
         <div className="content_no_bar">
           <div className="image_container">
-            <img src={images[index]} alt="dummy" />
+            <img src={images[index]} />
           </div>
           {information[index]}
         </div>
